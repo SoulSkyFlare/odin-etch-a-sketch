@@ -1,5 +1,7 @@
 const container = document.getElementById('grid-container');
-for (i=0; i<16*16; i++){
+
+function createDivs(n)
+for (i=0; i<n; i++){
     const squareDiv = document.createElement("div");
     squareDiv.classList.add('grid-block');
     container.appendChild(squareDiv);
@@ -10,4 +12,6 @@ function changeColor(e){
 }
 
 const divs = document.querySelectorAll(".grid-block");
-divs.forEach(item => item.addEventListener('mouseover', changeColor))
+divs.forEach(item => item.addEventListener('mouseover', changeColor));
+
+createDivs(16*16);
