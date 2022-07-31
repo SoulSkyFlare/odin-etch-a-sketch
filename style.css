@@ -3,12 +3,15 @@ body{
 }
 
 #grid-container {
-    display: grid;
+    display: inline-grid;
     grid-template-columns: repeat(16, 30px);
+    border: 2px solid black;
 }
 .grid-block {
-    border: 1px solid black;
-    background: white;
     width: 30px;
     height: 30px;
+}
+
+.block-active {
+ background: black;
 }
