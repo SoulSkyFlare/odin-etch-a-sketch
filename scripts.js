@@ -1,17 +1,37 @@
 const container = document.getElementById('grid-container');
 
-function createDivs(n)
-for (i=0; i<n; i++){
+function changeColor(e){
+    e.target.classList.add("block-active");
+}
+
+function createDivs(n){
+let nSquared = n ** 2;
+for (i=0; i<nSquared; i++){
     const squareDiv = document.createElement("div");
     squareDiv.classList.add('grid-block');
+    container.style.setProperty('grid-template-columns', `repeat(${n}, 1fr)`)
     container.appendChild(squareDiv);
+    const divs = document.querySelectorAll(".grid-block");
+    divs.forEach(item => item.addEventListener('mouseover', changeColor));
+}
 }
 
-function changeColor(e){
-    e.target.classList.toggle("block-active");
+
+
+createDivs(16);
+
+function setSquarePerSide(){
+    let squares = prompt("Choose the squares you want per side");
+    if(squares>100){
+        alert("You can only choose up to 100 squares per side!")
+    }
+    else {
+        while(container.firstChild){
+            container.removeChild(container.lastChild)
+        }
+        createDivs(squares);
+    }
 }
 
-const divs = document.querySelectorAll(".grid-block");
-divs.forEach(item => item.addEventListener('mouseover', changeColor));
-
-createDivs(16*16);
+const btn = document.querySelector(".btn")
+btn.addEventListener("click", setSquarePerSide)
