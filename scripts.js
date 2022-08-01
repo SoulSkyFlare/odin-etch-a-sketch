@@ -5,8 +5,7 @@ function changeColor(e){
 }
 
 function createDivs(n){
-let nSquared = n ** 2;
-for (i=0; i<nSquared; i++){
+for (i=0; i<n**2; i++){
     const squareDiv = document.createElement("div");
     squareDiv.classList.add('grid-block');
     container.style.setProperty('grid-template-columns', `repeat(${n}, 1fr)`)
