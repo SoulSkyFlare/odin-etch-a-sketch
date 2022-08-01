@@ -6,8 +6,8 @@ body{
     display: inline-grid;
     grid-template-columns: repeat(16, 1fr);
     border: 2px solid black;
-    width: 960px;
-    height: 960px;
+    width: 600px;
+    height: 600px;
 }
 .grid-block {
     width: 1fr;
